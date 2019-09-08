@@ -56,12 +56,14 @@ class TodoListController {
         window.todo.model.updateListName(listBeingEdited, newName);
     }
 
-    /**
+    /** 
      * HW #1. Task 1
      * Each List Should Have an Owner - 
      * each list currently has a name, make sure each list also has an Owner (i.e. a person's name) that can be edited in a text field beside the list name.
-     * 
-     * This function response to when the user changes the
+     */
+
+    /**
+     * This function responds to when the user changes the
      * owner of the list via the textfield.
      */
     processChangeOwner() {

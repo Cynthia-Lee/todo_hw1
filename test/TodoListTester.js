@@ -9,8 +9,12 @@ class TodoListTester {
             for (let i = 0; i < jsonData.lists.length; i++) {
                 let listData = jsonData.lists[i];
                 let newList = new TodoList();
+                // load List Name
                 let listName = listData.name;
                 newList.setName(listName);
+                // load List Owner
+                let listOwner = listData.owner;
+                newList.setOwner(listOwner);
                 for (let j = 0; j < listData.items.length; j++) {
                     var itemData = listData.items[j];
                     let newItem = new TodoListItem();
