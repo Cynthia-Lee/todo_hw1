@@ -152,6 +152,23 @@ class TodoListModel {
     }
 
     /**
+     * HW #1. Task 1
+     * Each List Should Have an Owner - 
+     * each list currently has a name, make sure each list also has an Owner (i.e. a person's name) that can be edited in a text field beside the list name.
+     * 
+     * Changes the owner of the list being edited.
+     * 
+     * @param {TodoList} listBeingEdited List in the process of being edited.
+     * @param {String} newOwner The new owner of the list.
+     */
+    updateListOwner(listBeingEdited, newOwner) {
+        if(listBeingEdited.getOwner() != newOwner) {
+            listBeingEdited.setOwner(newOwner);
+            this.view.loadListLinks(this.todoLists);
+        }
+    }
+
+    /**
      * This method creates a new list and sets it up so that it
      * can be edited.
      */

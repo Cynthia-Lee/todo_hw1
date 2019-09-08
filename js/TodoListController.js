@@ -23,6 +23,9 @@ class TodoListController {
         // THEN THE CONTROLS ON THE LIST SCREEN
         this.registerEventHandler(TodoGUIId.LIST_HEADING, TodoHTML.CLICK, this[TodoCallback.PROCESS_GO_HOME]);
         this.registerEventHandler(TodoGUIId.LIST_NAME_TEXTFIELD, TodoHTML.KEYUP, this[TodoCallback.PROCESS_CHANGE_NAME]);
+
+        // Owner TextField
+        this.registerEventHandler(TodoGUIId.LIST_OWNER_TEXTFIELD, TodoHTML.KEYUP, this[TodoCallback.PROCESS_CHANGE_OWNER]);
     }
 
     /**
@@ -51,6 +54,21 @@ class TodoListController {
         let newName = nameTextField.value;
         let listBeingEdited = window.todo.model.listToEdit;
         window.todo.model.updateListName(listBeingEdited, newName);
+    }
+
+    /**
+     * HW #1. Task 1
+     * Each List Should Have an Owner - 
+     * each list currently has a name, make sure each list also has an Owner (i.e. a person's name) that can be edited in a text field beside the list name.
+     * 
+     * This function response to when the user changes the
+     * owner of the list via the textfield.
+     */
+    processChangeOwner() {
+        let ownerTextField = document.getElementById(TodoGUIId.LIST_OWNER_TEXTFIELD);
+        let newOwner = ownerTextField.value;
+        let listBeingEdited = window.todo.model.listToEdit;
+        window.todo.model.updateListOwner(listBeingEdited, newOwner);
     }
 
     /**
