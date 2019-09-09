@@ -84,13 +84,8 @@ class TodoListView {
         // CARD TOOLBAR, ITEMS IN A GRID
         let listItemToolbarDiv = document.createElement(TodoHTML.DIV);
         listItemToolbarDiv.setAttribute(TodoHTML.CLASS, TodoGUIClass.LIST_ITEM_CARD_TOOLBAR);
-        
         // put items into this card in a grid
-
-        // PROCESS_MOVE_ITEM_DOWN: "window.todo.controller.processMoveItemDown",
-        // PROCESS_MOVE_ITEM_UP: "window.todo.controller.processMoveItemUp",
-        // PROCESS_DELETE_ITEM: "window.todo.controller.processDeleteItem",
-
+        
         // up button
         let upButtonDiv = document.createElement(TodoHTML.DIV);
         upButtonDiv.innerHTML = this.buildOpenTag("button type='button' class='list_item_card_move_up'") + 
@@ -98,6 +93,7 @@ class TodoListView {
         + this.buildCloseTag("button");
         let callbackArguments = [];
         this.setupCallback(upButtonDiv, TodoHTML.ONCLICK, TodoCallback.PROCESS_MOVE_ITEM_UP, callbackArguments);
+        // this.setupCallback(upButtonDiv, TodoHTML.ONCLICK, TodoCallback.PROCESS_EDIT_ITEM, itemArgs); // itemArgs
 
         // down button
         let downButtonDiv = document.createElement(TodoHTML.DIV);
@@ -107,11 +103,12 @@ class TodoListView {
         this.setupCallback(downButtonDiv, TodoHTML.ONCLICK, TodoCallback.PROCESS_MOVE_ITEM_DOWN, callbackArguments);
 
         // delete button
+        // let deleteButtonDiv = document.createElement(TodoHTML.DIV);
         let deleteButtonDiv = document.createElement(TodoHTML.DIV);
         deleteButtonDiv.innerHTML = this.buildOpenTag("button type='button' class='list_item_card_delete'") + 
         this.buildOpenTag("img src='images/icons/Close.png' alt='up' class='icon_size_medium'")
-        + this.buildCloseTag("button");;
-        this.setupCallback(deleteButtonDiv, TodoHTML.ONCLICK, TodoCallback.PROCESS_DELETE_ITEM, callbackArguments);
+        + this.buildCloseTag("button");
+        this.setupCallback(deleteButtonDiv, TodoHTML.ONCLICK, TodoCallback.PROCESS_DELETE_ITEM, itemArgs); // itemArgs
 
         // THESE THREE SPANS GO IN THE DETAILS DIV
         newItemDiv.appendChild(descriptionDiv);

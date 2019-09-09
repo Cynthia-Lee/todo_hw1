@@ -150,19 +150,28 @@ class TodoListController {
 
     }
 
-    processMoveItemUp() {
+    processMoveItemUp(itemArgs) {
         alert("Move up");
     }
 
-    processMoveItemDown() {
+    processMoveItemDown(itemArgs) {
         alert("Move down");
     }
 
-    processDeleteItem() {
-        //let listBeingEdited = window.todo.model.listToEdit;
-        // let itemBeingEdited
-        //listBeingEdited.removeItem(itemToRemove);
-        alert("Delete item");
+    processDeleteItem(itemArgs) {
+        // itemArgs is the item card index
+        let listBeingEdited = window.todo.model.listToEdit;
+        let itemBeingEdited = listBeingEdited.getItemAtIndex(itemArgs);
+        listBeingEdited.removeItem(itemBeingEdited);
+        // update list
+        window.todo.model.loadList(listBeingEdited.getName());
+        // console.log(listBeingEdited.items.length);
+    }
+
+    processEditItem(itemArgs) {
+        // itemArgs is the item card index
+        // alert(itemArgs);
+        // alert(itemArgs.length);
     }
 
     /**
