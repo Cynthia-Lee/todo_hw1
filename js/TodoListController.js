@@ -26,6 +26,9 @@ class TodoListController {
 
         // Owner TextField
         this.registerEventHandler(TodoGUIId.LIST_OWNER_TEXTFIELD, TodoHTML.KEYUP, this[TodoCallback.PROCESS_CHANGE_OWNER]);
+
+        // Trash Can
+        this.registerEventHandler(TodoGUIId.LIST_TRASH, TodoHTML.CLICK, this[TodoCallback.PROCESS_DELETE_LIST]);
     }
 
     /**
@@ -100,6 +103,52 @@ class TodoListController {
         window.todo.model.goList();
     }
 
+    /** 
+     * HW #1. Task 2
+     * Add a Delete List Button to List Editing Screen - 
+     * add a trash can button to the list edit screen such that when pressed it slides in a dialog to verify if one wishes to delete the list. 
+     * If the user presses Yes, the list will be deleted and the user will be brought back to the Welcome screen. 
+     * If the user presses No, the dialog will simply close. Note that your dialog must animated in and off screen. 
+     * Also note your trash can should be located as shown in the GUI figures.
+     */
+
+    /**
+     * This function responds to when the user clicks the trash can.
+     */
+    processDeleteList() {
+        // Prompt window, slides a dialog
+        // must be animated on and off screen
+
+        /*
+        if (confirm("Delete list?\nAre you sure you want to delete this list?\nThis list will not be retreivable.")) {
+            this.processConfirmDeleteList();
+        } else {
+            this.processCancelDeleteList();
+        }
+        */
+        if (confirm("Delete list?\nAre you sure you want to delete this list?\nThis list will not be retreivable.")) {
+            let listBeingEdited = window.todo.model.listToEdit;
+            window.todo.model.removeList(listBeingEdited);
+            window.todo.model.goHome();
+        } else {
+            
+        }
+    }
+
+    // PROCESS_CONFIRM_DELETE_LIST: "processConfirmDeleteList",
+    // PROCESS_CANCEL_DELETE_LIST: "processCancelDeleteList",
+
+    processConfirmDeleteList() {
+        //let listBeingEdited = window.todo.model.listToEdit;
+        //alert(listBeingEdited.name);
+        //window.todo.model.removeList(listBeingEdited);
+        //window.todo.model.goHome();
+    }
+
+    processCancelDeleteList() {
+
+    }
+
     /**
      * This function responds to when the user clicks on the
      * todo logo to go back to the home screen.
@@ -136,5 +185,22 @@ class TodoListController {
         else {
             window.todo.model.sortTasks(ItemSortCriteria.SORT_BY_STATUS_INCREASING);
         }
+    }
+
+    // HW #1. Task 3
+    /**
+     * This function is called in response when the user clicks
+     * on the Due Date header in the items table.
+     */
+    processSortItemsByDueDate() {
+        // IF WE ARE CURRENTLY INCREASING BY STATUS SWITCH TO DECREASING
+        if (window.todo.model.isCurrentItemSortCriteria(ItemSortCriteria.SORT_BY_DUE_DATE_INCREASING)) {
+            window.todo.model.sortTasks(ItemSortCriteria.SORT_BY_DUE_DATE_DECREASING);
+        } 
+        // ALL OTHER CASES SORT BY INCREASING
+        else {
+            window.todo.model.sortTasks(ItemSortCriteria.SORT_BY_DUE_DATE_INCREASING);
+        }
+
     }
 }

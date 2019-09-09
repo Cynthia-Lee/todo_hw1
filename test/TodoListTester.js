@@ -21,6 +21,7 @@ class TodoListTester {
                     newItem.setDescription(itemData.description);
                     newItem.setAssignedTo(itemData.assigned_to);
                     newItem.setCompleted(itemData.completed);
+                    newItem.setDueDate(itemData.due_date);
                     newList.addItem(newItem);
                 }
                 window.todo.model.appendList(newList);

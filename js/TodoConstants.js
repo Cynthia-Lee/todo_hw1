@@ -79,10 +79,12 @@ const TodoGUIClass = {
     LIST_ITEM_HEADER_CARD: "list_item_header_card",
     LIST_ITEM_TASK_HEADER: "list_item_task_header",
     LIST_ITEM_STATUS_HEADER: "list_item_status_header",
+    LIST_ITEM_DUE_DATE_HEADER: "list_item_due_date_header", // added (task 3)
     LIST_ITEM_CARD_DESCRIPTION: "list_item_card_description",
     LIST_ITEM_CARD_ASSIGNED_TO: "list_item_card_assigned_to",
     LIST_ITEM_CARD_COMPLETED: "list_item_card_completed",
     LIST_ITEM_CARD_NOT_COMPLETED: "list_item_card_not_completed",
+    LIST_ITEM_CARD_DUE_DATE: "list_item_card_due_date" // added (task 3)
 };
 
 /**

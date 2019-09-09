@@ -156,7 +156,7 @@ class TodoListModel {
      * Each List Should Have an Owner - 
      * each list currently has a name, make sure each list also has an Owner (i.e. a person's name) that can be edited in a text field beside the list name.
     */
-   
+
     /**
      * Changes the owner of the list being edited.
      * 
@@ -234,7 +234,8 @@ class TodoListModel {
 
         // IF IT'S A DECREASING CRITERIA SWAP THE ITEMS
         if (thisModel.isCurrentItemSortCriteria(ItemSortCriteria.SORT_BY_TASK_DECREASING)
-            || thisModel.isCurrentItemSortCriteria(ItemSortCriteria.SORT_BY_STATUS_DECREASING)) {
+            || thisModel.isCurrentItemSortCriteria(ItemSortCriteria.SORT_BY_STATUS_DECREASING)
+            || thisModel.isCurrentItemSortCriteria(ItemSortCriteria.SORT_BY_DUE_DATE_DECREASING)) {
             let temp = item1;
             item1 = item2;
             item2 = temp;
@@ -250,12 +251,22 @@ class TodoListModel {
                 return 0;
         }
         // SORT BY COMPLETED
-        else {
+        else if (thisModel.isCurrentItemSortCriteria(ItemSortCriteria.SORT_BY_STATUS_INCREASING)
+        || thisModel.isCurrentItemSortCriteria(ItemSortCriteria.SORT_BY_STATUS_DECREASING)) {
             if (item1.isCompleted() < item2.isCompleted())
                 return -1;
             else if (item1.isCompleted() > item2.isCompleted())
                 return 1;
             else
+                return 0;
+        } 
+        // SORT BY DUE DATE
+        else {
+            if (item1.getDueDate() < item2.getDueDate())
+                return -1;
+            else if (item1.getDueDate() > item2.getDueDate())
+                return 1;
+            else 
                 return 0;
         }
     }

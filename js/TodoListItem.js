@@ -15,6 +15,7 @@ class TodoListItem {
         this.description = "Unknown";
         this.assignedTo = "Unknown";
         this.completed = false;
+        this.dueDate = "Unknown"; // added
     }
 
     // GETTER/SETTER METHODS
@@ -41,5 +42,13 @@ class TodoListItem {
 
     setCompleted(initCompleted) {
         this.completed = initCompleted;
+    }
+
+    getDueDate() {
+        return this.dueDate;
+    }
+
+    setDueDate(initDueDate) {
+        this.dueDate = initDueDate;
     }
 }
