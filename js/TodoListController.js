@@ -151,11 +151,37 @@ class TodoListController {
     }
 
     processMoveItemUp(itemArgs) {
-        alert("Move up");
+        // itemArgs is the item card index
+        let listBeingEdited = window.todo.model.listToEdit;
+        let itemsArray = listBeingEdited.items;
+        // swap
+        // A is item at itemArgs
+        // B, A. temp = B
+        // A, A
+        // A, temp = B
+        let prevIndex = Number(itemArgs) - 1;
+        let temp = listBeingEdited.getItemAtIndex(prevIndex);
+        itemsArray[prevIndex] = listBeingEdited.getItemAtIndex(itemArgs);
+        itemsArray[itemArgs] = temp;
+        // update list
+        window.todo.model.loadList(listBeingEdited.getName());
     }
 
     processMoveItemDown(itemArgs) {
-        alert("Move down");
+        // itemArgs is the item card index
+        let listBeingEdited = window.todo.model.listToEdit;
+        let itemsArray = listBeingEdited.items;
+        // swap
+        // A is item at itemArgs
+        // A, B. temp = B
+        // A, A
+        // temp = B, A
+        let nextIndex = Number(itemArgs) + 1;
+        let temp = listBeingEdited.getItemAtIndex(nextIndex);
+        itemsArray[nextIndex] = listBeingEdited.getItemAtIndex(itemArgs);
+        itemsArray[itemArgs] = temp;
+        // update list
+        window.todo.model.loadList(listBeingEdited.getName());
     }
 
     processDeleteItem(itemArgs) {

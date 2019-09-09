@@ -91,19 +91,16 @@ class TodoListView {
         upButtonDiv.innerHTML = this.buildOpenTag("button type='button' class='list_item_card_move_up'") + 
         this.buildOpenTag("img src='images/icons/MoveUp.png' alt='up' class='icon_size_medium'")
         + this.buildCloseTag("button");
-        let callbackArguments = [];
-        this.setupCallback(upButtonDiv, TodoHTML.ONCLICK, TodoCallback.PROCESS_MOVE_ITEM_UP, callbackArguments);
-        // this.setupCallback(upButtonDiv, TodoHTML.ONCLICK, TodoCallback.PROCESS_EDIT_ITEM, itemArgs); // itemArgs
+        this.setupCallback(upButtonDiv, TodoHTML.ONCLICK, TodoCallback.PROCESS_MOVE_ITEM_UP, itemArgs);
 
         // down button
         let downButtonDiv = document.createElement(TodoHTML.DIV);
         downButtonDiv.innerHTML = this.buildOpenTag("button type='button' class='list_item_card_move_down'") + 
         this.buildOpenTag("img src='images/icons/MoveDown.png' alt='up' class='icon_size_medium'")
         + this.buildCloseTag("button");
-        this.setupCallback(downButtonDiv, TodoHTML.ONCLICK, TodoCallback.PROCESS_MOVE_ITEM_DOWN, callbackArguments);
+        this.setupCallback(downButtonDiv, TodoHTML.ONCLICK, TodoCallback.PROCESS_MOVE_ITEM_DOWN, itemArgs);
 
         // delete button
-        // let deleteButtonDiv = document.createElement(TodoHTML.DIV);
         let deleteButtonDiv = document.createElement(TodoHTML.DIV);
         deleteButtonDiv.innerHTML = this.buildOpenTag("button type='button' class='list_item_card_delete'") + 
         this.buildOpenTag("img src='images/icons/Close.png' alt='up' class='icon_size_medium'")
