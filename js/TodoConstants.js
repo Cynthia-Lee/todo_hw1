@@ -74,9 +74,9 @@ const TodoGUIClass = {
     HOME_LIST_LINK: "home_list_link",
 
     // LIST SCREEN CLASSes
-    LIST_ITEM_CARD: "list_item_card",
+    LIST_ITEM_CARD: "list_item_card", // list[i]
     LIST_ITEM_ADD_CARD: "list_item_add_card",
-    LIST_ITEM_HEADER_CARD: "list_item_header_card",
+    LIST_ITEM_HEADER_CARD: "list_item_header_card", // task, due date, status
     LIST_ITEM_TASK_HEADER: "list_item_task_header",
     LIST_ITEM_STATUS_HEADER: "list_item_status_header",
     LIST_ITEM_DUE_DATE_HEADER: "list_item_due_date_header", // added (task 3)
@@ -84,7 +84,14 @@ const TodoGUIClass = {
     LIST_ITEM_CARD_ASSIGNED_TO: "list_item_card_assigned_to",
     LIST_ITEM_CARD_COMPLETED: "list_item_card_completed",
     LIST_ITEM_CARD_NOT_COMPLETED: "list_item_card_not_completed",
-    LIST_ITEM_CARD_DUE_DATE: "list_item_card_due_date" // added (task 3)
+    LIST_ITEM_CARD_DUE_DATE: "list_item_card_due_date", // added (task 3)
+    LIST_ITEM_CARD_TOOLBAR: "list_item_card_toolbar", // added (task 4)
+
+    LIST_ITEM_CARD_DELETE: "list_item_card_delete", // added (task 4)
+    LIST_ITEM_CARD_MOVE_UP: "list_item_card_move_up",
+    LIST_ITEM_CARD_MOVE_DOWN: "list_item_card_move_down",
+
+    LIST_ITEM_CARD_BUTTON: "list_item_card_button" // entire card button
 };
 
 /**
@@ -104,6 +111,7 @@ const TodoCallback = {
     PROCESS_CANCEL_ITEM_CHANGES: "processCancelItemChanges",
     PROCESS_CONFIRM_DELETE_LIST: "processConfirmDeleteList",
     PROCESS_CANCEL_DELETE_LIST: "processCancelDeleteList",
+    // in Controller
 
     // AND OTHERS ARE SETUP DYNAMICALLY IN RESPONSE TO EVENTS,
     // FOR THESE WE'LL NEED TO LOCATE EVENT HANDLER FUNCTIONS
@@ -117,6 +125,7 @@ const TodoCallback = {
     PROCESS_SORT_ITEMS_BY_TASK: "window.todo.controller.processSortItemsByTask",
     PROCESS_SORT_ITEMS_BY_DUE_DATE: "window.todo.controller.processSortItemsByDueDate",
     PROCESS_SORT_ITEMS_BY_STATUS: "window.todo.controller.processSortItemsByStatus"
+    // in View
 };
 
 /**

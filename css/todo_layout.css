@@ -142,3 +142,15 @@ body {
 .item_input {
     grid-column: 3 / 4;
 }
+
+/* task 4 */
+.list_item_card_delete, .list_item_card_move_up, .list_item_card_move_down {
+    border-radius: 5px;
+    border: none;
+    height: 43px;
+}
+
+.icon_size_medium{
+    width: 36px;
+    height: 36px;
+}

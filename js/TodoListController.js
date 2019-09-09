@@ -22,13 +22,14 @@ class TodoListController {
 
         // THEN THE CONTROLS ON THE LIST SCREEN
         this.registerEventHandler(TodoGUIId.LIST_HEADING, TodoHTML.CLICK, this[TodoCallback.PROCESS_GO_HOME]);
-        this.registerEventHandler(TodoGUIId.LIST_NAME_TEXTFIELD, TodoHTML.KEYUP, this[TodoCallback.PROCESS_CHANGE_NAME]);
+        this.registerEventHandler(TodoGUIId.LIST_NAME_TEXTFIELD, TodoHTML.KEYUP, this[TodoCallback.PROCESS_CHANGE_NAME]); // Name
 
         // Owner TextField
         this.registerEventHandler(TodoGUIId.LIST_OWNER_TEXTFIELD, TodoHTML.KEYUP, this[TodoCallback.PROCESS_CHANGE_OWNER]);
 
         // Trash Can
         this.registerEventHandler(TodoGUIId.LIST_TRASH, TodoHTML.CLICK, this[TodoCallback.PROCESS_DELETE_LIST]);
+
     }
 
     /**
@@ -147,6 +148,21 @@ class TodoListController {
 
     processCancelDeleteList() {
 
+    }
+
+    processMoveItemUp() {
+        alert("Move up");
+    }
+
+    processMoveItemDown() {
+        alert("Move down");
+    }
+
+    processDeleteItem() {
+        //let listBeingEdited = window.todo.model.listToEdit;
+        // let itemBeingEdited
+        //listBeingEdited.removeItem(itemToRemove);
+        alert("Delete item");
     }
 
     /**

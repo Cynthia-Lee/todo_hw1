@@ -125,3 +125,8 @@ body {
 .list_item_card_not_completed {
     color: red;
 }
+
+/* task 4 */
+.list_item_card_delete, .list_item_card_move_up, .list_item_card_move_down {
+    background-color: var(--swatch-accent);
+}
