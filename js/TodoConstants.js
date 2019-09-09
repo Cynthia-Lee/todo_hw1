@@ -75,7 +75,7 @@ const TodoGUIClass = {
 
     // LIST SCREEN CLASSes
     LIST_ITEM_CARD: "list_item_card", // list[i]
-    LIST_ITEM_ADD_CARD: "list_item_add_card",
+    LIST_ITEM_ADD_CARD: "list_item_add_card", // add new item button (task 5)
     LIST_ITEM_HEADER_CARD: "list_item_header_card", // task, due date, status
     LIST_ITEM_TASK_HEADER: "list_item_task_header",
     LIST_ITEM_STATUS_HEADER: "list_item_status_header",
@@ -87,11 +87,11 @@ const TodoGUIClass = {
     LIST_ITEM_CARD_DUE_DATE: "list_item_card_due_date", // added (task 3)
     LIST_ITEM_CARD_TOOLBAR: "list_item_card_toolbar", // added (task 4)
 
-    LIST_ITEM_CARD_DELETE: "list_item_card_delete", // added (task 4)
-    LIST_ITEM_CARD_MOVE_UP: "list_item_card_move_up",
-    LIST_ITEM_CARD_MOVE_DOWN: "list_item_card_move_down",
+    // LIST_ITEM_CARD_DELETE: "list_item_card_delete", // added (task 4)
+    // LIST_ITEM_CARD_MOVE_UP: "list_item_card_move_up",
+    // LIST_ITEM_CARD_MOVE_DOWN: "list_item_card_move_down",
 
-    LIST_ITEM_CARD_BUTTON: "list_item_card_button" // entire card button
+    LIST_ITEM_CARD_BUTTON: "list_item_card_button" // toolbar buttons (task 4)
 };
 
 /**

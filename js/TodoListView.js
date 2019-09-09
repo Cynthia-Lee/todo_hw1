@@ -87,24 +87,26 @@ class TodoListView {
         // put items into this card in a grid
         
         // up button
-        let upButtonDiv = document.createElement(TodoHTML.DIV);
-        upButtonDiv.innerHTML = this.buildOpenTag("button type='button' class='list_item_card_move_up'") + 
-        this.buildOpenTag("img src='images/icons/MoveUp.png' alt='up' class='icon_size_medium'")
-        + this.buildCloseTag("button");
+        // let upButtonDiv = document.createElement(TodoHTML.DIV);
+        let upButtonDiv = document.createElement("BUTTON");
+        upButtonDiv.setAttribute(TodoHTML.CLASS, TodoGUIClass.LIST_ITEM_CARD_BUTTON);
+        // upButtonDiv.setAttribute(TodoHTML.CLASS, TodoGUIClass.LIST_ITEM_CARD_MOVE_UP);
+        //upButtonDiv.innerHTML = this.buildOpenTag("button type='button' class='list_item_card_move_up'") + 
+        //this.buildOpenTag("img src='images/icons/MoveUp.png' alt='up' class='icon_size_medium'")
+        //+ this.buildCloseTag("button");
+        upButtonDiv.innerHTML = this.buildOpenTag("img src='images/icons/MoveUp.png' alt='up' class='icon_size_medium'");
         this.setupCallback(upButtonDiv, TodoHTML.ONCLICK, TodoCallback.PROCESS_MOVE_ITEM_UP, itemArgs);
 
         // down button
-        let downButtonDiv = document.createElement(TodoHTML.DIV);
-        downButtonDiv.innerHTML = this.buildOpenTag("button type='button' class='list_item_card_move_down'") + 
-        this.buildOpenTag("img src='images/icons/MoveDown.png' alt='up' class='icon_size_medium'")
-        + this.buildCloseTag("button");
+        let downButtonDiv = document.createElement("BUTTON");
+        downButtonDiv.setAttribute(TodoHTML.CLASS, TodoGUIClass.LIST_ITEM_CARD_BUTTON);
+        downButtonDiv.innerHTML = this.buildOpenTag("img src='images/icons/MoveDown.png' alt='up' class='icon_size_medium'");
         this.setupCallback(downButtonDiv, TodoHTML.ONCLICK, TodoCallback.PROCESS_MOVE_ITEM_DOWN, itemArgs);
 
         // delete button
-        let deleteButtonDiv = document.createElement(TodoHTML.DIV);
-        deleteButtonDiv.innerHTML = this.buildOpenTag("button type='button' class='list_item_card_delete'") + 
-        this.buildOpenTag("img src='images/icons/Close.png' alt='up' class='icon_size_medium'")
-        + this.buildCloseTag("button");
+        let deleteButtonDiv = document.createElement("BUTTON");
+        deleteButtonDiv.setAttribute(TodoHTML.CLASS, TodoGUIClass.LIST_ITEM_CARD_BUTTON);
+        deleteButtonDiv.innerHTML = this.buildOpenTag("img src='images/icons/Close.png' alt='up' class='icon_size_medium'");
         this.setupCallback(deleteButtonDiv, TodoHTML.ONCLICK, TodoCallback.PROCESS_DELETE_ITEM, itemArgs); // itemArgs
 
         // THESE THREE SPANS GO IN THE DETAILS DIV
@@ -185,7 +187,7 @@ class TodoListView {
         this.removeAllChildren(listItemsDiv);
 
         let listItemsHeaderDiv = this.buildListItemsHeader();
-        listItemsDiv.appendChild(listItemsHeaderDiv);
+        listItemsDiv.appendChild(listItemsHeaderDiv); // load the list header (task, due date, status)
 
         // LOAD THE ITEM CARDS
         for (let i = 0; i < listToLoad.items.length; i++) {
@@ -193,6 +195,13 @@ class TodoListView {
             let itemCard = this.buildListItem(item, i);
             listItemsDiv.appendChild(itemCard);
         }
+
+        // Load the item card add new item button
+        //let statusHeaderDiv = document.createElement(TodoHTML.DIV);
+        //statusHeaderDiv.setAttribute(TodoHTML.CLASS, TodoGUIClass.LIST_ITEM_STATUS_HEADER);
+        //statusHeaderDiv.innerHTML = 'Status';
+        //this.setupCallback(statusHeaderDiv, TodoHTML.ONCLICK, TodoCallback.PROCESS_SORT_ITEMS_BY_STATUS, callbackArguments);
+        //listItemsDiv.appendChild(statusHeaderDiv);
     }
 
     /**
