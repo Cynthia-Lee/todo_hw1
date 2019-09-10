@@ -116,12 +116,12 @@ const TodoCallback = {
     // AND OTHERS ARE SETUP DYNAMICALLY IN RESPONSE TO EVENTS,
     // FOR THESE WE'LL NEED TO LOCATE EVENT HANDLER FUNCTIONS
     // USING THEIR FULL PATH
-    PROCESS_DELETE_ITEM: "window.todo.controller.processDeleteItem",
+    PROCESS_DELETE_ITEM: "window.todo.controller.processDeleteItem", // task 4
     PROCESS_EDIT_ITEM: "window.todo.controller.processEditItem",
     PROCESS_EDIT_LIST: "window.todo.controller.processEditList",
-    PROCESS_MOVE_ITEM_DOWN: "window.todo.controller.processMoveItemDown",
-    PROCESS_MOVE_ITEM_UP: "window.todo.controller.processMoveItemUp",
-    PROCESS_CREATE_NEW_ITEM: "window.todo.controller.processCreateNewItem",
+    PROCESS_MOVE_ITEM_DOWN: "window.todo.controller.processMoveItemDown", // task 4
+    PROCESS_MOVE_ITEM_UP: "window.todo.controller.processMoveItemUp", // task 4
+    PROCESS_CREATE_NEW_ITEM: "window.todo.controller.processCreateNewItem", // task 5
     PROCESS_SORT_ITEMS_BY_TASK: "window.todo.controller.processSortItemsByTask",
     PROCESS_SORT_ITEMS_BY_DUE_DATE: "window.todo.controller.processSortItemsByDueDate",
     PROCESS_SORT_ITEMS_BY_STATUS: "window.todo.controller.processSortItemsByStatus"

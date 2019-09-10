@@ -100,13 +100,13 @@ class TodoListView {
         // down button
         let downButtonDiv = document.createElement("BUTTON");
         downButtonDiv.setAttribute(TodoHTML.CLASS, TodoGUIClass.LIST_ITEM_CARD_BUTTON);
-        downButtonDiv.innerHTML = this.buildOpenTag("img src='images/icons/MoveDown.png' alt='up' class='icon_size_medium'");
+        downButtonDiv.innerHTML = this.buildOpenTag("img src='images/icons/MoveDown.png' alt='down' class='icon_size_medium'");
         this.setupCallback(downButtonDiv, TodoHTML.ONCLICK, TodoCallback.PROCESS_MOVE_ITEM_DOWN, itemArgs);
 
         // delete button
         let deleteButtonDiv = document.createElement("BUTTON");
         deleteButtonDiv.setAttribute(TodoHTML.CLASS, TodoGUIClass.LIST_ITEM_CARD_BUTTON);
-        deleteButtonDiv.innerHTML = this.buildOpenTag("img src='images/icons/Close.png' alt='up' class='icon_size_medium'");
+        deleteButtonDiv.innerHTML = this.buildOpenTag("img src='images/icons/Close.png' alt='delete' class='icon_size_medium'");
         this.setupCallback(deleteButtonDiv, TodoHTML.ONCLICK, TodoCallback.PROCESS_DELETE_ITEM, itemArgs); // itemArgs
 
         // THESE THREE SPANS GO IN THE DETAILS DIV
@@ -197,11 +197,13 @@ class TodoListView {
         }
 
         // Load the item card add new item button
-        //let statusHeaderDiv = document.createElement(TodoHTML.DIV);
-        //statusHeaderDiv.setAttribute(TodoHTML.CLASS, TodoGUIClass.LIST_ITEM_STATUS_HEADER);
-        //statusHeaderDiv.innerHTML = 'Status';
-        //this.setupCallback(statusHeaderDiv, TodoHTML.ONCLICK, TodoCallback.PROCESS_SORT_ITEMS_BY_STATUS, callbackArguments);
-        //listItemsDiv.appendChild(statusHeaderDiv);
+        // LIST_ITEM_ADD_CARD
+        let addCardDiv = document.createElement(TodoHTML.DIV);
+        addCardDiv.setAttribute(TodoHTML.CLASS, TodoGUIClass.LIST_ITEM_ADD_CARD);
+        addCardDiv.innerHTML = this.buildOpenTag("img src='images/icons/Additem.png' alt='add item' class='icon_size_medium'");
+        let callbackArguments = [];
+        this.setupCallback(addCardDiv, TodoHTML.ONCLICK, TodoCallback.PROCESS_CREATE_NEW_ITEM, callbackArguments);
+        listItemsDiv.appendChild(addCardDiv);
     }
 
     /**

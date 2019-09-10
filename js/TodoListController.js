@@ -116,7 +116,7 @@ class TodoListController {
     /**
      * This function responds to when the user clicks the trash can.
      */
-    processDeleteList() {
+    processDeleteList() { // CHANGE
         // Prompt window, slides a dialog
         // must be animated on and off screen
 
@@ -139,14 +139,14 @@ class TodoListController {
     // PROCESS_CONFIRM_DELETE_LIST: "processConfirmDeleteList",
     // PROCESS_CANCEL_DELETE_LIST: "processCancelDeleteList",
 
-    processConfirmDeleteList() {
+    processConfirmDeleteList() { // CHANGE
         //let listBeingEdited = window.todo.model.listToEdit;
         //alert(listBeingEdited.name);
         //window.todo.model.removeList(listBeingEdited);
         //window.todo.model.goHome();
     }
 
-    processCancelDeleteList() {
+    processCancelDeleteList() { // CHANGE
 
     }
 
@@ -194,10 +194,14 @@ class TodoListController {
         // console.log(listBeingEdited.items.length);
     }
 
-    processEditItem(itemArgs) {
+    processEditItem(itemArgs) { // CHANGE
         // itemArgs is the item card index
         // alert(itemArgs);
         // alert(itemArgs.length);
+    }
+
+    processCreateNewItem() {
+        
     }
 
     /**
