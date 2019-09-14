@@ -200,7 +200,7 @@ class TodoListView {
         // LIST_ITEM_ADD_CARD
         let addCardDiv = document.createElement(TodoHTML.DIV);
         addCardDiv.setAttribute(TodoHTML.CLASS, TodoGUIClass.LIST_ITEM_ADD_CARD);
-        addCardDiv.innerHTML = "&#128933";
+        addCardDiv.innerHTML = "&#43";
         let callbackArguments = [];
         this.setupCallback(addCardDiv, TodoHTML.ONCLICK, TodoCallback.PROCESS_CREATE_NEW_ITEM, callbackArguments);
         listItemsDiv.appendChild(addCardDiv);
