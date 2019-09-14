@@ -127,6 +127,7 @@ class TodoListController {
             this.processCancelDeleteList();
         }
         */
+        /*
         if (confirm("Delete list?\nAre you sure you want to delete this list?\nThis list will not be retreivable.")) {
             let listBeingEdited = window.todo.model.listToEdit;
             window.todo.model.removeList(listBeingEdited);
@@ -134,6 +135,11 @@ class TodoListController {
         } else {
             
         }
+        */
+       let delModal = document.getElementById(TodoGUIId.LIST_DELETE_MODAL);
+       delModal.style.display = "block";
+       delModal.setAttribute(TodoHTML.CLASS, TodoGUIId.LIST_DELETE_MODAL);
+       
     }
 
     // PROCESS_CONFIRM_DELETE_LIST: "processConfirmDeleteList",

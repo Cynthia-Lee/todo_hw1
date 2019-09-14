@@ -101,9 +101,18 @@ body {
     left: 60%;
 }
 .list_item_card_toolbar {
+    /*
     position: absolute;
     left: 85%;
     width: 15%;
+    top: 5%;
+    height: 90%;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    */
+    position: absolute;
+    left: 84%;
+    width: 16%;
     top: 5%;
     height: 90%;
     display: grid;
@@ -147,4 +156,9 @@ body {
 .icon_size_medium{
     width: 36px;
     height: 36px;
+}
+
+.list_delete_modal {
+    width: 20%;
+    height: 10%;
 }

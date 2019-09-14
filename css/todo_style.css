@@ -82,6 +82,9 @@ body {
     color: var(--swatch-accent);
     cursor: pointer;
 }
+#list_trash {
+    font-size: 72px;
+}
 
 /* LIST SCREEN CLASSES */
 .list_item_card, .list_item_add_card {
@@ -130,4 +133,10 @@ body {
 .list_item_card_button {
     background-color: var(--swatch-accent);
     border: none;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.list_delete_modal {
+    background-color: red;
 }

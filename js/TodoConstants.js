@@ -54,6 +54,7 @@ const TodoGUIId = {
     // IDs FOR LIST SCREEN CONTROLS
     LIST_HEADING: 'list_heading',
     LIST_TRASH: 'list_trash',
+    LIST_DELETE_MODAL: 'list_delete_modal', // task 2
     LIST_DETAILS_CONTAINER: 'list_details_container',
     LIST_DETAILS_NAME_CONTAINER: 'list_details_name_container',
     LIST_NAME_PROMPT: 'list_name_prompt',
