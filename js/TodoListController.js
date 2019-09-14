@@ -28,9 +28,21 @@ class TodoListController {
         this.registerEventHandler(TodoGUIId.LIST_OWNER_TEXTFIELD, TodoHTML.KEYUP, this[TodoCallback.PROCESS_CHANGE_OWNER]);
 
         // Trash Can
+        // this.registerEventHandler(TodoGUIId.LIST_TRASH, TodoHTML.CLICK, window.todo.view.showDialog());
         this.registerEventHandler(TodoGUIId.LIST_TRASH, TodoHTML.CLICK, this[TodoCallback.PROCESS_DELETE_LIST]);
+        // this.registerEventHandler(TodoGUIId.LIST_TRASH, TodoHTML.CLICK, this[TodoCallback.PROCESS_SHOW_DIALOG]);
+
+        // Dialog Modal - yes button
+        this.registerEventHandler(TodoGUIId.MODAL_YES_BUTTON, TodoHTML.CLICK, this[TodoCallback.PROCESS_CONFIRM_DELETE_LIST]);
+
+        // Dialog Modal - no button
+        this.registerEventHandler(TodoGUIId.MODAL_NO_BUTTON, TodoHTML.CLICK, this[TodoCallback.PROCESS_CANCEL_DELETE_LIST]);
 
     }
+
+    // processShowDialog() {
+    //    window.todo.view.showDialog();
+    // }
 
     /**
      * This function helps the constructor setup the event handlers for all controls.
@@ -136,10 +148,16 @@ class TodoListController {
             
         }
         */
-       let delModal = document.getElementById(TodoGUIId.LIST_DELETE_MODAL);
-       delModal.style.display = "block";
-       delModal.setAttribute(TodoHTML.CLASS, TodoGUIId.LIST_DELETE_MODAL);
+       //let delModal = document.getElementById(TodoGUIId.LIST_DELETE_MODAL);
+       //delModal.setAttribute(TodoHTML.CLASS, TodoGUIId.LIST_DELETE_MODAL);
+       // yes button
        
+       // no button
+       console.log("HHHH");
+       //delModal.style.display = "block";
+       // let dialog = document.getElementById(TodoGUIId.MODAL_YES_NO_DIALOG);
+       // dialog.removeAttribute("hidden");
+       window.todo.view.showDialog();
     }
 
     // PROCESS_CONFIRM_DELETE_LIST: "processConfirmDeleteList",
@@ -150,10 +168,12 @@ class TodoListController {
         //alert(listBeingEdited.name);
         //window.todo.model.removeList(listBeingEdited);
         //window.todo.model.goHome();
+        console.log("confirm delete list");
     }
 
     processCancelDeleteList() { // CHANGE
-
+        console.log("cancel delete list");
+        window.todo.view.hideDialog();
     }
 
     processMoveItemUp(itemArgs) {

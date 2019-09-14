@@ -69,13 +69,21 @@
     </div>
 
     <!-- Modal Box for confirm delete list -->
-    <div id="list_delete_modal" hidden>
-        hi
-        <div class="modal_container">
-            <div class="modal_header"></div>
-            <div class="modal_body"></div>
-            <div class="modal_buttons"></div>
-            <div class="modal_footer"></div>
+    <div id="modal_yes_no_dialog" class="is_hidden">
+        <div id="modal_container">
+            <div id="modal_header">
+                <h2>Delete list?</h2>
+            </div>
+            <div id="modal_body">
+                <p>Are you sure you want to delete the list?</p>
+            </div>
+            <div id="modal_buttons">
+                <button id="modal_yes_button">Yes</button>
+                <button id="modal_no_button">No</button>
+            </div>
+            <div id="modal_footer">
+                <p>This list will not be retreivable.</p>
+            </div>
         </div>
     </div>
 </body>

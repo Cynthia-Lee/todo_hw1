@@ -137,6 +137,14 @@ body {
     font-weight: bold;
 }
 
-.list_delete_modal {
-    background-color: red;
+/* task 2*/
+#modal_yes_no_dialog {
+    background-color: purple;
+}
+
+.is_visible {
+    visibility: visible;
+}
+.is_hidden {
+    visibility: hidden;
 }

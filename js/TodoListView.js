@@ -331,6 +331,9 @@ class TodoListView {
     hideDialog() {
         let dialog = document.getElementById(TodoGUIId.MODAL_YES_NO_DIALOG);
         dialog.classList.remove(TodoGUIClass.IS_VISIBLE);
+        // added for task 2
+        dialog.classList.add(TodoGUIClass.IS_HIDDEN);
+        // dialog.style.visibility = "hidden";
     }
 
     /**
@@ -339,6 +342,8 @@ class TodoListView {
     showDialog() {
         let dialog = document.getElementById(TodoGUIId.MODAL_YES_NO_DIALOG);
         dialog.classList.add(TodoGUIClass.IS_VISIBLE);
+        // added for task 2
+        dialog.classList.remove(TodoGUIClass.IS_HIDDEN);
     }
 
     /**

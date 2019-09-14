@@ -54,7 +54,11 @@ const TodoGUIId = {
     // IDs FOR LIST SCREEN CONTROLS
     LIST_HEADING: 'list_heading',
     LIST_TRASH: 'list_trash',
-    LIST_DELETE_MODAL: 'list_delete_modal', // task 2
+
+    MODAL_YES_NO_DIALOG: 'modal_yes_no_dialog', // task 2, added // yes and no button, task 2, added
+    MODAL_YES_BUTTON: "modal_yes_button", 
+    MODAL_NO_BUTTON: "modal_no_button", // task 2, added
+    
     LIST_DETAILS_CONTAINER: 'list_details_container',
     LIST_DETAILS_NAME_CONTAINER: 'list_details_name_container',
     LIST_NAME_PROMPT: 'list_name_prompt',
@@ -92,7 +96,11 @@ const TodoGUIClass = {
     // LIST_ITEM_CARD_MOVE_UP: "list_item_card_move_up",
     // LIST_ITEM_CARD_MOVE_DOWN: "list_item_card_move_down",
 
-    LIST_ITEM_CARD_BUTTON: "list_item_card_button" // toolbar buttons (task 4)
+    LIST_ITEM_CARD_BUTTON: "list_item_card_button", // toolbar buttons (task 4)
+
+    // task 2
+    IS_VISIBLE: "is_visible",
+    IS_HIDDEN: "is_hidden"
 };
 
 /**
@@ -112,6 +120,7 @@ const TodoCallback = {
     PROCESS_CANCEL_ITEM_CHANGES: "processCancelItemChanges",
     PROCESS_CONFIRM_DELETE_LIST: "processConfirmDeleteList",
     PROCESS_CANCEL_DELETE_LIST: "processCancelDeleteList",
+    // PROCESS_SHOW_DIALOG: "processShowDialog", // added for task 2
     // in Controller
 
     // AND OTHERS ARE SETUP DYNAMICALLY IN RESPONSE TO EVENTS,
@@ -127,6 +136,7 @@ const TodoCallback = {
     PROCESS_SORT_ITEMS_BY_DUE_DATE: "window.todo.controller.processSortItemsByDueDate",
     PROCESS_SORT_ITEMS_BY_STATUS: "window.todo.controller.processSortItemsByStatus"
     // in View
+
 };
 
 /**
