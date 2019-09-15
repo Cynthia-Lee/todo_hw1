@@ -43,13 +43,22 @@ body {
 .home_list_link {}
 
 /* LIST SCREEN CONTROLS */
-#list_heading {}
+#list_heading {
+    width: 190px;
+}
 #list_trash {
+    width: 55px;
+    position: absolute;
+    right: 0px;
+    text-align: right;
+    top: 5px;
+    /*
     position: absolute;
     left: 85%;
     width: 15%;
     text-align: right;
     top: 5%;
+    */
 }
 #list_details_container {
     padding-left: 2%;
@@ -111,7 +120,7 @@ body {
     grid-template-columns: 33% 33% 33%;
     */
     position: absolute;
-    left: 84%;
+    right: 0px;
     width: 16%;
     top: 5%;
     height: 90%;
