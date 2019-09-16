@@ -333,7 +333,6 @@ class TodoListView {
         dialog.classList.remove(TodoGUIClass.IS_VISIBLE);
         // added for task 2
         dialog.classList.add(TodoGUIClass.IS_HIDDEN);
-        // dialog.style.visibility = "hidden";
     }
 
     /**

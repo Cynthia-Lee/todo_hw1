@@ -119,7 +119,7 @@ class TodoListModel {
     goHome() {
         // THIS COULD HAPPEN ANYWHERE SO HIDE ALL THE OTHERS
         this.view.showElementWithId(TodoGUIId.TODO_LIST, false);
-        // this.view.showElementWithId(TodoGUIId.TODO_ITEM, false); // perhaps?
+        this.view.showElementWithId(TodoGUIId.TODO_ITEM, false); // perhaps?
 
         // AND GO HOME
         this.view.showElementWithId(TodoGUIId.TODO_HOME, true);        

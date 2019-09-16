@@ -144,14 +144,33 @@ body {
 
 /* task 2*/
 #modal_yes_no_dialog {
-    background-color: purple;
+    visibility: hidden;
+    z-index: 1; /* modal will sit on top */
+    width: 600px;
+    height: 250px;
+    position: absolute;
+    top: 45%;
+    background-color: var(--swatch-complement);
 }
 
 .is_visible {
-    visibility: visible;
+    position: relative;
+    animation-name: animateSlideIn;
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards;
 }
 .is_hidden {
-    visibility: hidden;
+    position: relative;
+    animation-name: animateSlideOut;
+    animation-duration: 0.4s;
+}
+@keyframes animateSlideIn {
+    from {left:-70%; opacity:0; visibility: hidden}
+    to {left:26%; opacity:1; visibility: visible}
+}
+@keyframes animateSlideOut {
+    from {left:26%; opacity:1; visibility: visible}
+    to {left:-70%; opacity:0; visibility: hidden}
 }
 
 /* task 7 */
