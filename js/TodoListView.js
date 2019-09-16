@@ -343,6 +343,7 @@ class TodoListView {
         dialog.classList.add(TodoGUIClass.IS_VISIBLE);
         // added for task 2
         dialog.classList.remove(TodoGUIClass.IS_HIDDEN);
+        window.todo.view.showElementWithId(TodoGUIId.MODAL_YES_NO_DIALOG, true);
     }
 
     /**

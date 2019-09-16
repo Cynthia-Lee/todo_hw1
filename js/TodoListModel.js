@@ -120,6 +120,7 @@ class TodoListModel {
         // THIS COULD HAPPEN ANYWHERE SO HIDE ALL THE OTHERS
         this.view.showElementWithId(TodoGUIId.TODO_LIST, false);
         this.view.showElementWithId(TodoGUIId.TODO_ITEM, false); // perhaps?
+        this.view.showElementWithId(TodoGUIId.MODAL_YES_NO_DIALOG, false); // added for task 2
 
         // AND GO HOME
         this.view.showElementWithId(TodoGUIId.TODO_HOME, true);        
