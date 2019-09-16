@@ -186,6 +186,17 @@ body {
     from {opacity:1; visibility: visible}
     to {left:-70%; opacity:0; visibility: hidden}
 }
+/* disable button clicks and scroll */
+/* disable scroll */
+.disable_scroll { /* apply to body */
+    height: 100%; 
+    overflow: hidden
+}
+/* disable buttons */
+.disable_buttons { /* apply to list item buttons */
+    pointer-events: auto;
+}
+
 
 /* task 7 */
 #item_form_submit_button, #item_form_cancel_button {

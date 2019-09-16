@@ -138,48 +138,23 @@ class TodoListController {
     processDeleteList() { // CHANGE
         // Prompt window, slides a dialog
         // must be animated on and off screen
-
-        /*
-        if (confirm("Delete list?\nAre you sure you want to delete this list?\nThis list will not be retreivable.")) {
-            this.processConfirmDeleteList();
-        } else {
-            this.processCancelDeleteList();
-        }
-        */
-        /*
-        if (confirm("Delete list?\nAre you sure you want to delete this list?\nThis list will not be retreivable.")) {
-            let listBeingEdited = window.todo.model.listToEdit;
-            window.todo.model.removeList(listBeingEdited);
-            window.todo.model.goHome();
-        } else {
-            
-        }
-        */
-       //let delModal = document.getElementById(TodoGUIId.LIST_DELETE_MODAL);
-       //delModal.setAttribute(TodoHTML.CLASS, TodoGUIId.LIST_DELETE_MODAL);
-       // yes button
-       
-       // no button
-       console.log("HHHH");
-       //delModal.style.display = "block";
-       // let dialog = document.getElementById(TodoGUIId.MODAL_YES_NO_DIALOG);
-       // dialog.removeAttribute("hidden");
-       window.todo.view.showDialog();
+        window.todo.view.showDialog();
+       // disable controls
+       // disable scroll
+       // body.classList.add("disable_scroll");
+       // disable all butons - up, down, delete item - edit item card
+       // LIST_ITEM_CARD_BUTTON
+       // document.getElementById("myDIV").classList.add("mystyle");
+       // document.getElementById(TodoGUIClass.LIST_ITEM_CARD_BUTTON).classList.add("disable_buttons");
     }
 
-    // PROCESS_CONFIRM_DELETE_LIST: "processConfirmDeleteList",
-    // PROCESS_CANCEL_DELETE_LIST: "processCancelDeleteList",
-
-    processConfirmDeleteList() { // CHANGE
-        //let listBeingEdited = window.todo.model.listToEdit;
-        //alert(listBeingEdited.name);
-        //window.todo.model.removeList(listBeingEdited);
-        //window.todo.model.goHome();
-        console.log("confirm delete list");
+    processConfirmDeleteList() {
+        let listBeingEdited = window.todo.model.listToEdit;
+        window.todo.model.removeList(listBeingEdited);
+        window.todo.model.goHome();
     }
 
     processCancelDeleteList() { // CHANGE
-        console.log("cancel delete list");
         window.todo.view.hideDialog();
     }
 
