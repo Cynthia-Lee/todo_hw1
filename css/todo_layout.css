@@ -172,6 +172,12 @@ body {
     font-size: 24px;
 }
 
+/* task 2 */
+#modal_yes_button, #modal_no_button {
+    height: 45px;
+    width: 50px;
+}
+
 /* task 4 */
 .icon_size_medium{
     width: 36px;
