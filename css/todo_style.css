@@ -148,8 +148,15 @@ body {
     z-index: 1; /* modal will sit on top */
     width: 435px;
     height: 240px;
+    /*
     position: absolute;
-    top: 45%;
+    top: 45%; */
+    /* position: relative; */
+    position: absolute;
+    top: 300px;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
     background-color: var(--swatch-complement);
 }
 
@@ -163,34 +170,22 @@ body {
 }
 
 .is_visible {
-    position: relative;
     animation-name: animateSlideIn;
     animation-duration: 0.4s;
     animation-fill-mode: forwards;
 }
 .is_hidden {
-    position: relative;
     animation-name: animateSlideOut;
     animation-duration: 0.4s;
 }
 @keyframes animateSlideIn {
     from {left:-70%; opacity:0; visibility: hidden}
-    to {left: 50%; margin-right: -50%; transform: translate(-50%, 0%); opacity:1; visibility: visible}
+    to {opacity:1; visibility: visible}
 }
 @keyframes animateSlideOut {
-    from {left: 50%; margin-right: -50%; transform: translate(-50%, 0%); opacity:1; visibility: visible}
+    from {opacity:1; visibility: visible}
     to {left:-70%; opacity:0; visibility: hidden}
 }
-/*
-@keyframes animateSlideIn {
-    from {left:-70%; opacity:0; visibility: hidden}
-    to {left:32%; opacity:1; visibility: visible}
-}
-@keyframes animateSlideOut {
-    from {left:32%; opacity:1; visibility: visible}
-    to {left:-70%; opacity:0; visibility: hidden}
-}
-*/
 
 /* task 7 */
 #item_form_submit_button, #item_form_cancel_button {
