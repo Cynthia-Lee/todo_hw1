@@ -119,11 +119,22 @@ class TodoListModel {
     goHome() {
         // THIS COULD HAPPEN ANYWHERE SO HIDE ALL THE OTHERS
         this.view.showElementWithId(TodoGUIId.TODO_LIST, false);
+        // this.view.showElementWithId(TodoGUIId.TODO_ITEM, false); // perhaps?
 
         // AND GO HOME
         this.view.showElementWithId(TodoGUIId.TODO_HOME, true);        
     }
 
+    /**
+     * This function will navigate the user to the edit item screen where they can edit an item.
+     */
+    goItem() {
+        // hide the list screen
+        this.view.showElementWithId(TodoGUIId.TODO_LIST, false);
+
+        // go to new screen
+        this.view.showElementWithId(TodoGUIId.TODO_ITEM, true)
+    }
     /**
      * This function will navigate the user to the list screen where they
      * may edit a list.
@@ -131,6 +142,7 @@ class TodoListModel {
     goList() {
         // THIS MIGHT HAVE OCCURED FROM HOME SO HIDE HOME
         this.view.showElementWithId(TodoGUIId.TODO_HOME, false);
+        this.view.showElementWithId(TodoGUIId.TODO_ITEM, false); // added for task 7
 
         // SHOW THE TOOLBAR AND LIST EDIT
         this.view.showElementWithId(TodoGUIId.TODO_LIST, true);
@@ -269,5 +281,25 @@ class TodoListModel {
             else 
                 return 0;
         }
+    }
+
+    // task 7
+    clearItemForm(listForm) {
+        // description
+        let description = document.getElementById(TodoGUIId.ITEM_DESCRIPTION_TEXTFIELD);
+        this.clearInput(description);
+        // assigned to
+        let assignedTo = document.getElementById(TodoGUIId.ITEM_ASSIGNED_TO_TEXTFIELD);
+        this.clearInput(assignedTo);
+        // due date
+        let dueDate = document.getElementById(TodoGUIId.ITEM_DUE_DATE_PICKER);
+        this.clearInput(dueDate);
+        // completed
+        let completedBox = document.getElementById(TodoGUIId.ITEM_COMPLETED_CHECKBOX);
+        completedBox.checked = false;
+    }
+
+    clearInput(input) {
+        input.value = "";
     }
 }

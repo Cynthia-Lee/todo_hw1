@@ -38,6 +38,13 @@ class TodoListController {
         // Dialog Modal - no button
         this.registerEventHandler(TodoGUIId.MODAL_NO_BUTTON, TodoHTML.CLICK, this[TodoCallback.PROCESS_CANCEL_DELETE_LIST]);
 
+        // Item Screen - submit button
+        // ITEM_FORM_SUBMIT_BUTTON
+        this.registerEventHandler(TodoGUIId.ITEM_FORM_SUBMIT_BUTTON, TodoHTML.CLICK, this[TodoCallback.PROCESS_SUBMIT_ITEM_CHANGES]);
+
+        // Item Screen - cancel button
+        // ITEM_FORM_CANCEL_BUTTON
+        this.registerEventHandler(TodoGUIId.ITEM_FORM_CANCEL_BUTTON, TodoHTML.CLICK, this[TodoCallback.PROCESS_CANCEL_ITEM_CHANGES]);
     }
 
     // processShowDialog() {
@@ -224,10 +231,12 @@ class TodoListController {
         // itemArgs is the item card index
         // alert(itemArgs);
         // alert(itemArgs.length);
+
+        // window.todo.model.goEditItem(); // go to edit item screen
     }
 
-    processCreateNewItem() {
-        
+    processCreateNewItem() { // called on by clicking the "+"" on the add item card
+        window.todo.model.goItem(); // go to edit item screen
     }
 
     /**
@@ -282,6 +291,17 @@ class TodoListController {
         else {
             window.todo.model.sortTasks(ItemSortCriteria.SORT_BY_DUE_DATE_INCREASING);
         }
+    }
+
+    // task 7
+    processCancelItemChanges() {
+        // go back to the list page
+        let listForm = document.getElementById(TodoGUIId.ITEM_FORM_CONTAINER);
+        window.todo.model.clearItemForm(listForm);
+        window.todo.model.goList();
+    }
+
+    processSubmitItemChanges() { // change
 
     }
 }

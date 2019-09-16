@@ -41,6 +41,7 @@ const TodoGUIId = {
     // IDs FOR SCREENS
     TODO_HOME: 'todo_home',
     TODO_LIST: 'todo_list',
+    TODO_ITEM: 'todo_item', // added for task 5, edit item screen
 
     // IDs FOR HOME SCREEN CONTROLS
     HOME_YOUR_LISTS_CONTAINER: 'home_your_lists_container',
@@ -67,6 +68,25 @@ const TodoGUIId = {
     LIST_OWNER_PROMPT: "list_owner_prompt",
     LIST_OWNER_TEXTFIELD: 'list_owner_textfield',
     LIST_ITEMS_CONTAINER: 'list_items_container',
+
+    // IDS FOR ITEM SCREEN CONTROLS
+    ITEM_FORM_CONTAINER: 'item_form_container',
+    // 'item_form_description_container'
+    // 'item_description_prompt'
+    ITEM_DESCRIPTION_TEXTFIELD: 'item_description_textfield',
+    // 'item_form_assigned_to_container'
+    // "item_assigned_to_prompt"
+    ITEM_ASSIGNED_TO_TEXTFIELD: 'item_assigned_to_textfield',
+    // "item_form_due_date_container"
+    // "item_due_date_prompt">Due Date:</span>
+    ITEM_DUE_DATE_PICKER: 'item_due_date_picker', 
+    // "item_form_completed_container" 
+    // "item_completed_prompt">Completed:</span>
+    ITEM_COMPLETED_CHECKBOX: 'item_completed_checkbox', 
+    // "item_form_buttons"
+    ITEM_FORM_SUBMIT_BUTTON: 'item_form_submit_button', // 'item_form_submit_button'
+    ITEM_FORM_CANCEL_BUTTON: 'item_form_cancel_button' // 'item_form_cancel_button'
+
 };
 
 /**

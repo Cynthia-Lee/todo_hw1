@@ -141,6 +141,7 @@ body {
 #item_heading {}
 #item_form_container {
     display: grid;
+    row-gap: 24px;
 }
 #item_description_prompt {}
 #item_description_textfield {}
@@ -149,20 +150,40 @@ body {
 #item_due_date_prompt {}
 #item_due_date_picker {}
 #item_completed_prompt {}
-#item_completed_checkbox {}
+#item_completed_checkbox {
+    width: 0px;
+    margin: 0px;
+}
 #item_form_submit_button {}
 #item_form_cancel_button {}
 
 /* ITEM SCREEN CLASSES */
 .item_prompt {
+    /*
     grid-column: 1 / 4;
+    */
+    grid-column: 1;
 }
 .item_input {
+    /*
     grid-column: 3 / 4;
+    */
+    grid-column: 2 / span 4;
+    font-size: 24px;
 }
 
 /* task 4 */
 .icon_size_medium{
     width: 36px;
     height: 36px;
+}
+
+/* task 7 */
+#item_form_submit_button, #item_form_cancel_button {
+    margin: auto;
+    border-radius: 10px;
+    cursor: pointer;
+}
+#item_form_buttons {
+    margin-top: 20px;
 }

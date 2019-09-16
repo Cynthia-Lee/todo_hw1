@@ -90,9 +90,14 @@ body {
 .list_item_card, .list_item_add_card {
     background-color: var(--swatch-neutral);
 }
+.list_item_card:hover {
+    background-color: var(--swatch-complement);
+}
+/*
 .list_item_card:hover, .list_item_add_card:hover {
     background-color: var(--swatch-complement);
 }
+*/
 .list_item_add_card {
     font-weight: bold;
     font-size: 24pt;
@@ -147,4 +152,13 @@ body {
 }
 .is_hidden {
     visibility: hidden;
+}
+
+/* task 7 */
+#item_form_submit_button, #item_form_cancel_button {
+    font-size: 20px;
+}
+.item_prompt {
+    font-weight: bold;
+    font-size: 18px;
 }
