@@ -285,7 +285,7 @@ class TodoListModel {
     }
 
     // task 7
-    clearItemForm(listForm) {
+    clearItemForm() {
         // description
         let description = document.getElementById(TodoGUIId.ITEM_DESCRIPTION_TEXTFIELD);
         this.clearInput(description);
@@ -303,4 +303,43 @@ class TodoListModel {
     clearInput(input) {
         input.value = "";
     }
+
+    // task 5 
+    /*
+    addEditItem(list, descript, assigned, due, completed) {
+        let newItem = new TodoListItem();
+        newItem.setDescription(descript);
+        newItem.setAssignedTo(assigned);
+        newItem.setCompleted(completed);
+        newItem.setDueDate(due);
+
+        list.addItem(newItem);
+    }
+    */
+    /*
+    addEditItem() {
+        let listBeingEdited = window.todo.model.listToEdit;
+        // description
+        let description = document.getElementById(TodoGUIId.ITEM_DESCRIPTION_TEXTFIELD);
+        let newDescription = description.value;
+        // assigned to
+        let assignedTo = document.getElementById(TodoGUIId.ITEM_ASSIGNED_TO_TEXTFIELD);
+        let newAssignedTo = assignedTo.value;
+        // due date
+        let dueDate = document.getElementById(TodoGUIId.ITEM_DUE_DATE_PICKER);
+        let newDueDate = dueDate.value;
+        // completed
+        let completedBox = document.getElementById(TodoGUIId.ITEM_COMPLETED_CHECKBOX);
+        let newCompletedBox = completedBox.value;
+
+        let newItem = new TodoListItem();
+        newItem.setDescription(newDescription);
+        newItem.setAssignedTo(newAssignedTo);
+        newItem.setCompleted(itemData.completed);
+        newItem.setDueDate(itemData.due_date);
+
+        listBeingEdited.addItem(newItem);
+    }
+    */
+
 }

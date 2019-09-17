@@ -41,7 +41,8 @@ class TodoListController {
         // Item Screen - submit button
         // ITEM_FORM_SUBMIT_BUTTON
         this.registerEventHandler(TodoGUIId.ITEM_FORM_SUBMIT_BUTTON, TodoHTML.CLICK, this[TodoCallback.PROCESS_SUBMIT_ITEM_CHANGES]);
-
+        // figure out if item is edited or if item is added
+        
         // Item Screen - cancel button
         // ITEM_FORM_CANCEL_BUTTON
         this.registerEventHandler(TodoGUIId.ITEM_FORM_CANCEL_BUTTON, TodoHTML.CLICK, this[TodoCallback.PROCESS_CANCEL_ITEM_CHANGES]);
@@ -217,11 +218,15 @@ class TodoListController {
         // alert(itemArgs);
         // alert(itemArgs.length);
         // need to stop propagation of buttons
+        // clear item form
+        window.todo.model.clearItemForm();
         window.todo.model.goItem(); // go to edit item screen
     }
 
     processCreateNewItem() { // called on by clicking the "+"" on the add item card
         window.todo.model.goItem(); // go to edit item screen
+        // clear values
+        window.todo.model.clearItemForm();
     }
 
     /**
@@ -281,12 +286,45 @@ class TodoListController {
     // task 7
     processCancelItemChanges() {
         // go back to the list page
-        let listForm = document.getElementById(TodoGUIId.ITEM_FORM_CONTAINER);
-        window.todo.model.clearItemForm(listForm);
+        // let listForm = document.getElementById(TodoGUIId.ITEM_FORM_CONTAINER);
+        window.todo.model.clearItemForm();
         window.todo.model.goList();
     }
 
     processSubmitItemChanges() { // change
+        // take in values
+        let listBeingEdited = window.todo.model.listToEdit;
+        // description
+        let description = document.getElementById(TodoGUIId.ITEM_DESCRIPTION_TEXTFIELD);
+        let newDescription = description.value;
+        // assigned to
+        let assignedTo = document.getElementById(TodoGUIId.ITEM_ASSIGNED_TO_TEXTFIELD);
+        let newAssignedTo = assignedTo.value;
+        // due date
+        let dueDate = document.getElementById(TodoGUIId.ITEM_DUE_DATE_PICKER);
+        let newDueDate = dueDate.value;
+        // completed
+        let completedBox = document.getElementById(TodoGUIId.ITEM_COMPLETED_CHECKBOX);
+        let newCompletedBox = completedBox.checked;
 
+
+        // CHECK IF ADD ITEM OR EDIT ITEM
+
+        // add it as an item
+        let newItem = new TodoListItem();
+        newItem.setDescription(newDescription);
+        newItem.setAssignedTo(newAssignedTo);
+        newItem.setCompleted(newCompletedBox);
+        newItem.setDueDate(newDueDate);
+        listBeingEdited.addItem(newItem);
+
+        // if edit an item
+
+
+        // update list
+        window.todo.model.loadList(listBeingEdited.getName());
+
+        // go back to the list
+        window.todo.model.goList();
     }
 }
