@@ -333,6 +333,8 @@ class TodoListView {
         dialog.classList.remove(TodoGUIClass.IS_VISIBLE);
         // added for task 2
         dialog.classList.add(TodoGUIClass.IS_HIDDEN);
+        // allow modal and modal buttons to be clicked 
+        dialog.classList.remove("modal_container_open");
     }
 
     /**
@@ -344,6 +346,8 @@ class TodoListView {
         // added for task 2
         dialog.classList.remove(TodoGUIClass.IS_HIDDEN);
         window.todo.view.showElementWithId(TodoGUIId.MODAL_YES_NO_DIALOG, true);
+        // allow modal and modal buttons to be clicked 
+        dialog.classList.add("modal_container_open");
     }
 
     /**

@@ -139,22 +139,25 @@ class TodoListController {
         // Prompt window, slides a dialog
         // must be animated on and off screen
         window.todo.view.showDialog();
-       // disable controls
-       // disable scroll
-       // body.classList.add("disable_scroll");
-       // disable all butons - up, down, delete item - edit item card
-       // LIST_ITEM_CARD_BUTTON
-       // document.getElementById("myDIV").classList.add("mystyle");
-       // document.getElementById(TodoGUIClass.LIST_ITEM_CARD_BUTTON).classList.add("disable_buttons");
+        // disable scroll and buttons
+        document.body.classList.add("modal_open");
+        // allow modal and modal buttons to be clicked 
+        // let dialog = document.getElementById(TodoGUIId.MODAL_YES_NO_DIALOG);
+        // dialog.classList.add("modal_container_open");
     }
 
     processConfirmDeleteList() {
         let listBeingEdited = window.todo.model.listToEdit;
         window.todo.model.removeList(listBeingEdited);
+        // reable scroll and buttons
+        document.body.classList.remove("modal_open");
+        window.todo.view.hideDialog();
         window.todo.model.goHome();
     }
 
-    processCancelDeleteList() { // CHANGE
+    processCancelDeleteList() {
+        // reable scroll and buttons
+        document.body.classList.remove("modal_open");
         window.todo.view.hideDialog();
     }
 

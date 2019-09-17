@@ -160,12 +160,12 @@ body {
     background-color: var(--swatch-complement);
 }
 
-#modal_body {
+.modal_body {
     font-weight: bold;
     padding-bottom: 15px;
     padding-top: 15px;
 }
-#modal_heading, #modal_body, #modal_footer {
+.modal_heading, .modal_body, .modal_footer {
     padding-left: 15px;
 }
 
@@ -186,17 +186,16 @@ body {
     from {opacity:1; visibility: visible}
     to {left:-70%; opacity:0; visibility: hidden}
 }
-/* disable button clicks and scroll */
-/* disable scroll */
-.disable_scroll { /* apply to body */
-    height: 100%; 
-    overflow: hidden
-}
-/* disable buttons */
-.disable_buttons { /* apply to list item buttons */
-    pointer-events: auto;
+
+.modal_container_open {
+    pointer-events: auto; /* allows to click buttons in the modal */
 }
 
+/* disable button clicks and scroll */
+body.modal_open { 
+    pointer-events: none; /* disable buttons */
+    overflow: hidden; /* disable scroll */
+}
 
 /* task 7 */
 #item_form_submit_button, #item_form_cancel_button {
