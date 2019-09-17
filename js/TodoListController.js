@@ -161,7 +161,10 @@ class TodoListController {
         window.todo.view.hideDialog();
     }
 
+    // item card tool bar
     processMoveItemUp(itemArgs) {
+        // stop propagation
+        event.stopPropagation();
         // itemArgs is the item card index
         let listBeingEdited = window.todo.model.listToEdit;
         let itemsArray = listBeingEdited.items;
@@ -179,6 +182,8 @@ class TodoListController {
     }
 
     processMoveItemDown(itemArgs) {
+        // stop propagation
+        event.stopPropagation();
         // itemArgs is the item card index
         let listBeingEdited = window.todo.model.listToEdit;
         let itemsArray = listBeingEdited.items;
@@ -196,6 +201,8 @@ class TodoListController {
     }
 
     processDeleteItem(itemArgs) {
+        // stop propagation
+        event.stopPropagation();
         // itemArgs is the item card index
         let listBeingEdited = window.todo.model.listToEdit;
         let itemBeingEdited = listBeingEdited.getItemAtIndex(itemArgs);
@@ -209,8 +216,8 @@ class TodoListController {
         // itemArgs is the item card index
         // alert(itemArgs);
         // alert(itemArgs.length);
-
-        // window.todo.model.goEditItem(); // go to edit item screen
+        // need to stop propagation of buttons
+        window.todo.model.goItem(); // go to edit item screen
     }
 
     processCreateNewItem() { // called on by clicking the "+"" on the add item card
