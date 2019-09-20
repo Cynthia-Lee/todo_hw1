@@ -149,7 +149,7 @@ body {
     top: 45%; */
     /* position: relative; */
     position: absolute;
-    top: 300px;
+    top: 50%;
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
@@ -190,7 +190,6 @@ body {
 /* disable button clicks and scroll */
 body.modal_open { 
     pointer-events: none; /* disable buttons */
-    overflow: hidden; /* disable scroll */
 }
 
 /* task 7 */
