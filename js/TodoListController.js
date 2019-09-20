@@ -76,6 +76,13 @@ class TodoListController {
     processChangeName() {
         let nameTextField = document.getElementById(TodoGUIId.LIST_NAME_TEXTFIELD);
         let newName = nameTextField.value;
+
+        // added
+        let checkName = newName.trim();
+        if (checkName == "") {
+            newName = "Unnknown";
+        }
+
         let listBeingEdited = window.todo.model.listToEdit;
         window.todo.model.updateListName(listBeingEdited, newName);
     }
