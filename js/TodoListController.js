@@ -140,7 +140,7 @@ class TodoListController {
         // Prompt window, slides a dialog
         // must be animated on and off screen
         window.todo.view.showDialog();
-        // disable scroll and buttons
+        // disable buttons
         document.body.classList.add("modal_open");
         // allow modal and modal buttons to be clicked 
         // let dialog = document.getElementById(TodoGUIId.MODAL_YES_NO_DIALOG);
@@ -166,39 +166,50 @@ class TodoListController {
     processMoveItemUp(itemArgs) {
         // stop propagation
         event.stopPropagation();
-        // itemArgs is the item card index
-        let listBeingEdited = window.todo.model.listToEdit;
-        let itemsArray = listBeingEdited.items;
-        // swap
-        // A is item at itemArgs
-        // B, A. temp = B
-        // A, A
-        // A, temp = B
-        let prevIndex = Number(itemArgs) - 1;
-        let temp = listBeingEdited.getItemAtIndex(prevIndex);
-        itemsArray[prevIndex] = listBeingEdited.getItemAtIndex(itemArgs);
-        itemsArray[itemArgs] = temp;
-        // update list
-        window.todo.model.loadList(listBeingEdited.getName());
+
+        if (itemArgs == 0 ) {
+
+        } else {
+            // itemArgs is the item card index
+            let listBeingEdited = window.todo.model.listToEdit;
+            let itemsArray = listBeingEdited.items;
+            // swap
+            // A is item at itemArgs
+            // B, A. temp = B
+            // A, A
+            // A, temp = B
+            let prevIndex = Number(itemArgs) - 1;
+            let temp = listBeingEdited.getItemAtIndex(prevIndex);
+            itemsArray[prevIndex] = listBeingEdited.getItemAtIndex(itemArgs);
+            itemsArray[itemArgs] = temp;
+            // update list
+            window.todo.model.loadList(listBeingEdited.getName());
+        }
     }
 
     processMoveItemDown(itemArgs) {
         // stop propagation
         event.stopPropagation();
-        // itemArgs is the item card index
-        let listBeingEdited = window.todo.model.listToEdit;
-        let itemsArray = listBeingEdited.items;
-        // swap
-        // A is item at itemArgs
-        // A, B. temp = B
-        // A, A
-        // temp = B, A
-        let nextIndex = Number(itemArgs) + 1;
-        let temp = listBeingEdited.getItemAtIndex(nextIndex);
-        itemsArray[nextIndex] = listBeingEdited.getItemAtIndex(itemArgs);
-        itemsArray[itemArgs] = temp;
-        // update list
-        window.todo.model.loadList(listBeingEdited.getName());
+
+        let editedListLength = window.todo.model.listToEdit.items.length;
+        if (itemArgs == editedListLength - 1) {
+
+        } else {
+            // itemArgs is the item card index
+            let listBeingEdited = window.todo.model.listToEdit;
+            let itemsArray = listBeingEdited.items;
+            // swap
+            // A is item at itemArgs
+            // A, B. temp = B
+            // A, A
+            // temp = B, A
+            let nextIndex = Number(itemArgs) + 1;
+            let temp = listBeingEdited.getItemAtIndex(nextIndex);
+            itemsArray[nextIndex] = listBeingEdited.getItemAtIndex(itemArgs);
+            itemsArray[itemArgs] = temp;
+            // update list
+            window.todo.model.loadList(listBeingEdited.getName());
+        }
     }
 
     processDeleteItem(itemArgs) {
@@ -213,7 +224,7 @@ class TodoListController {
         // console.log(listBeingEdited.items.length);
     }
 
-    processEditItem(itemArgs) { // CHANGE
+    processEditItem(itemArgs) {
         // itemArgs is the item card index
         // clear item form
         window.todo.model.clearItemForm();

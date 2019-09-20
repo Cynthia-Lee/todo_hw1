@@ -90,6 +90,7 @@ class TodoListView {
         // let upButtonDiv = document.createElement(TodoHTML.DIV);
         let upButtonDiv = document.createElement(TodoHTML.DIV);
         upButtonDiv.setAttribute(TodoHTML.CLASS, TodoGUIClass.LIST_ITEM_CARD_BUTTON);
+        // upButtonDiv.setAttribute(TodoHTML.ID, TodoGUIId.LIST_ITEM_CARD_MOVE_UP); // added
         // upButtonDiv.setAttribute(TodoHTML.CLASS, TodoGUIClass.LIST_ITEM_CARD_MOVE_UP);
         //upButtonDiv.innerHTML = this.buildOpenTag("button type='button' class='list_item_card_move_up'") + 
         //this.buildOpenTag("img src='images/icons/MoveUp.png' alt='up' class='icon_size_medium'")
@@ -120,6 +121,17 @@ class TodoListView {
         listItemToolbarDiv.appendChild(upButtonDiv);
         listItemToolbarDiv.appendChild(downButtonDiv);
         listItemToolbarDiv.appendChild(deleteButtonDiv);
+
+        if (listItemIndex == 0) {
+            upButtonDiv.classList.add(TodoGUIClass.DISABLED);  
+            // event.stopPropagation();
+        }
+
+        let editedListLength = window.todo.model.listToEdit.items.length;
+        //alert(editedListLength);
+        if (listItemIndex == editedListLength - 1) {
+            downButtonDiv.classList.add(TodoGUIClass.DISABLED); 
+        }
 
         return newItemDiv;
     }

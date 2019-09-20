@@ -85,7 +85,16 @@ const TodoGUIId = {
     ITEM_COMPLETED_CHECKBOX: 'item_completed_checkbox', 
     // "item_form_buttons"
     ITEM_FORM_SUBMIT_BUTTON: 'item_form_submit_button', // 'item_form_submit_button'
-    ITEM_FORM_CANCEL_BUTTON: 'item_form_cancel_button' // 'item_form_cancel_button'
+    ITEM_FORM_CANCEL_BUTTON: 'item_form_cancel_button', // 'item_form_cancel_button'
+
+    /*
+    // (task 9) disable buttons
+    LIST_ITEM_CARD_DELETE: "list_item_card_delete", // added
+    LIST_ITEM_CARD_MOVE_UP: "list_item_card_move_up",
+    LIST_ITEM_CARD_MOVE_DOWN: "list_item_card_move_down",
+    ITEM_CARD_0_LIST_ITEM_CARD_MOVE_UP: "item_card_0_list_item_card_move_up"
+    // ITEM_CARD_1_LIST_ITEM_CARD_MOVE_DOWN: ""
+    */
 
 };
 
@@ -112,15 +121,14 @@ const TodoGUIClass = {
     LIST_ITEM_CARD_DUE_DATE: "list_item_card_due_date", // added (task 3)
     LIST_ITEM_CARD_TOOLBAR: "list_item_card_toolbar", // added (task 4)
 
-    // LIST_ITEM_CARD_DELETE: "list_item_card_delete", // added (task 4)
-    // LIST_ITEM_CARD_MOVE_UP: "list_item_card_move_up",
-    // LIST_ITEM_CARD_MOVE_DOWN: "list_item_card_move_down",
-
     LIST_ITEM_CARD_BUTTON: "list_item_card_button", // toolbar buttons (task 4)
 
     // task 2
     IS_VISIBLE: "is_visible",
-    IS_HIDDEN: "is_hidden"
+    IS_HIDDEN: "is_hidden",
+
+    // task 9
+    DISABLED: "disabled"
 };
 
 /**
