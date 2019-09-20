@@ -215,11 +215,32 @@ class TodoListController {
 
     processEditItem(itemArgs) { // CHANGE
         // itemArgs is the item card index
-        // alert(itemArgs);
-        // alert(itemArgs.length);
-        // need to stop propagation of buttons
         // clear item form
         window.todo.model.clearItemForm();
+        this.listItemIndex = itemArgs; // storing the item index in controller
+        // putting things in the textboxes
+        let listBeingEdited = window.todo.model.listToEdit;
+        // description
+        let description = document.getElementById(TodoGUIId.ITEM_DESCRIPTION_TEXTFIELD);
+        // assigned to
+        let assignedTo = document.getElementById(TodoGUIId.ITEM_ASSIGNED_TO_TEXTFIELD);
+        // due date
+        let dueDate = document.getElementById(TodoGUIId.ITEM_DUE_DATE_PICKER);
+        // completed
+        let completedBox = document.getElementById(TodoGUIId.ITEM_COMPLETED_CHECKBOX);
+
+        // retrieve data to put in the textfield
+        // get the item
+        let itemsArray = listBeingEdited.items;
+        let currIndex = window.todo.controller.listItemIndex;
+        let currentItem = itemsArray[currIndex];
+        // console.log(currentItem.getDescription());
+        description.value = currentItem.getDescription();
+        assignedTo.value = currentItem.getAssignedTo();
+        dueDate.value = currentItem.getDueDate();
+        completedBox.checked = currentItem.isCompleted();
+
+        window.todo.model.editItem = true;
         window.todo.model.goItem(); // go to edit item screen
     }
 
@@ -307,20 +328,33 @@ class TodoListController {
         let completedBox = document.getElementById(TodoGUIId.ITEM_COMPLETED_CHECKBOX);
         let newCompletedBox = completedBox.checked;
 
-
+        // console.log(window.todo.model.editItem);
         // CHECK IF ADD ITEM OR EDIT ITEM
-
-        // add it as an item
-        let newItem = new TodoListItem();
-        newItem.setDescription(newDescription);
-        newItem.setAssignedTo(newAssignedTo);
-        newItem.setCompleted(newCompletedBox);
-        newItem.setDueDate(newDueDate);
-        listBeingEdited.addItem(newItem);
-
-        // if edit an item
-
-
+        // if (window.todo.model.isEditingItem()) { // if edit an item
+        if (window.todo.model.editItem) { // if edit an item
+            // retrieve data to put in the textfield
+            // get the item
+            let itemsArray = listBeingEdited.items;
+            let currIndex = window.todo.controller.listItemIndex;
+            let currentItem = itemsArray[currIndex];
+            currentItem.setDescription(newDescription);
+            currentItem.setAssignedTo(newAssignedTo);
+            currentItem.setCompleted(newCompletedBox);
+            currentItem.setDueDate(newDueDate);
+            // console.log(currentItem.getDescription());
+            // console.log(currentItem.getAssignedTo());
+            // console.log(currentItem.isCompleted());
+            // console.log(currentItem.getDueDate());
+            window.todo.model.editItem = false;
+        } else {
+            // add it as an item
+            let newItem = new TodoListItem();
+            newItem.setDescription(newDescription);
+            newItem.setAssignedTo(newAssignedTo);
+            newItem.setCompleted(newCompletedBox);
+            newItem.setDueDate(newDueDate);
+            listBeingEdited.addItem(newItem);
+        }
         // update list
         window.todo.model.loadList(listBeingEdited.getName());
 

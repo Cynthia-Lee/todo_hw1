@@ -33,6 +33,11 @@ class TodoListModel {
 
         // NO LIST IS BEING EDITED JUST YET
         this.listToEdit = null;
+
+        // edit or add item flag
+        // edit = true when you want to edit
+        // edit = false when you want to add an item
+        this.editItem = false;
     }
 
     /**
