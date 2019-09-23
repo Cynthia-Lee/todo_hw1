@@ -127,6 +127,9 @@ class TodoListModel {
         this.view.showElementWithId(TodoGUIId.TODO_ITEM, false); // perhaps?
         this.view.showElementWithId(TodoGUIId.MODAL_YES_NO_DIALOG, false); // added for task 2
 
+        // hide the top home gray bar 
+        document.getElementById(TodoGUIId.TODO_HOME).style.visibility = "visible";
+
         // AND GO HOME
         this.view.showElementWithId(TodoGUIId.TODO_HOME, true);        
     }
@@ -137,6 +140,11 @@ class TodoListModel {
     goItem() {
         // hide the list screen
         this.view.showElementWithId(TodoGUIId.TODO_LIST, false);
+        // hide home screen
+        this.view.showElementWithId(TodoGUIId.TODO_HOME, false); // not working
+
+        // hide the top home gray bar 
+        document.getElementById(TodoGUIId.TODO_HOME).style.visibility = "hidden";
 
         // go to new screen
         this.view.showElementWithId(TodoGUIId.TODO_ITEM, true)
@@ -149,6 +157,9 @@ class TodoListModel {
         // THIS MIGHT HAVE OCCURED FROM HOME SO HIDE HOME
         this.view.showElementWithId(TodoGUIId.TODO_HOME, false);
         this.view.showElementWithId(TodoGUIId.TODO_ITEM, false); // added for task 7
+
+        // hide the top home gray bar 
+        document.getElementById(TodoGUIId.TODO_HOME).style.visibility = "visible";
 
         // SHOW THE TOOLBAR AND LIST EDIT
         this.view.showElementWithId(TodoGUIId.TODO_LIST, true);
